@@ -5,7 +5,7 @@ module.exports = app => {
         res.json(friends);
     });
 
-
-
-
+    app.post('/api/friends', (req, res) => {
+        
+    })
 }
