@@ -13,7 +13,20 @@
         crossorigin="anonymous">
     </head>
     <body>
-            <div class='container'>
+            <div class='container col-md-4'>
+                    <form>
+                        
+                        <div class = 'row'>
+                            <div class = 'col'>
+                                <input id = 'nameInput' type="text" class="form-control" placeholder="First name">
+                            </div>
+                        </div><br>
+                        <div class = 'row'>
+                            <div class = 'col'>
+                                <input id = 'photoLink' type = 'text' class = 'form-control' placeholder="link to your photo">
+                            </div>
+                        </div>
+                    </form><br>
                     <h4>Question 1</h4>
                     <p>Do you want to build a snowman?</p>
                     <form>
@@ -180,38 +193,36 @@
 </html>
 
 <script type="text/javascript">
+$(document).ready(function(){
+
+
     $('#submit-button').on('click', function(e){
         e.preventDefault();
-        var newMember = {
-            q1: $('#q1').val().trim(),
-            q2: $('#q2').val().trim(),
-            q3: $('#q3').val().trim(),
-            q4: $('#q4').val().trim(),
-            q5: $('#q5').val().trim(),
-            q6: $('#q6').val().trim(),
-            q7: $('#q7').val().trim(),
-            q8: $('#q8').val().trim(),
-            q9: $('#q9').val().trim(),
-            q10: $('#q10').val().trim(),
+        var newMember ={
+            name: $('#nameInput').val().trim(),
+            photoLink: $('#photoLink').val().trim(),
+            scores: [
+            parseInt($('#q1').val().trim()),
+            parseInt($('#q2').val().trim()),
+            parseInt($('#q3').val().trim()),
+            parseInt($('#q4').val().trim()),
+            parseInt($('#q5').val().trim()),
+            parseInt($('#q6').val().trim()),
+            parseInt($('#q7').val().trim()),
+            parseInt($('#q8').val().trim()),
+            parseInt($('#q9').val().trim()),
+            parseInt($('#q10').val().trim())
+            ]
         };
+        console.log(newMember.scores);
         console.log(newMember)
     
 
     $.post('/api/friends', newMember, (data) => {
         alert('data was sent');
 
-        // Clear the form when submitting
-             $('#q1').val("");
-            $('#q2').val("");
-            $('#q3').val("");
-            $('#q4').val("");
-            $('#q5').val("");
-            $('#q6').val("");
-            $('#q7').val("");
-            $('#q8').val("");
-            $('#q9').val("");
-            $('#q10').val("");
     })
 
+});
 });
 </script>
