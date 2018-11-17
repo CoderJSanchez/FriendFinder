@@ -198,7 +198,8 @@ $(document).ready(function(){
 
     $('#submit-button').on('click', function(e){
         e.preventDefault();
-        var newMember ={
+
+        var newMember = {
             name: $('#nameInput').val().trim(),
             photoLink: $('#photoLink').val().trim(),
             scores: [
@@ -214,14 +215,15 @@ $(document).ready(function(){
             parseInt($('#q10').val().trim())
             ]
         };
-        console.log(newMember.scores);
+        console.log(typeof newMember.scores[0]);
+        console.log(typeof newMember.scores[1]);
         console.log(newMember)
     
 
-    $.post('/api/friends', newMember, (data) => {
-        alert('data was sent');
-
-    })
+    $.post('/api/friends', newMember)
+     .then(function(data) {
+        alert('data was sent')
+    });
 
 });
 });
