@@ -1,7 +1,7 @@
 var friends = [ 
 {
     name:"Michael Scott",
-    photo:"http://cdn3-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-15.jpg",
+    photo:"public/img/michael.png",
     scores:[
         '5',
         '1',
@@ -16,24 +16,24 @@ var friends = [
       ]
   },
   {
-    name:"Joe",
-    photo:"https://i.ytimg.com/vi/mRf3-JkwqfU/hqdefault.jpg",
+    name:"Chuck",
+    photo:"public/img/chuck.jpg",
     scores:[
-        '3',
-        '2',
-        '4',
-        '1',
-        '3',
-        '2',
-        '1',
-        '4',
-        '2',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
+        '5',
         '5'
       ]
   },
   {
-    name:"Homer",
-    photo:"http://cdn3-www.cattime.com/assets/uploads/2011/08/best-kitten-names-1.jpg",
+    name:"Andy",
+    photo:"public/img/andyDwyer.jpg",
     scores:[
         '2',
         '5',
@@ -49,33 +49,33 @@ var friends = [
   },
   {
     name:"John Snow",
-    photo:"https://pbs.twimg.com/profile_images/562466745340817408/_nIu8KHX.jpeg",
+    photo:"public/img/jonSnow",
     scores:[
         '2',
         '1',
         '5',
         '3',
-        '1',
+        '5',
         '4',
         '3',
         '5',
-        '2',
-        '1'
+        '5',
+        '5'
       ]
   },
   {
     name:"Lindsey",
-    photo:"http://4.bp.blogspot.com/-HTvSYzA-pO4/UgQb4Zh_u0I/AAAAAAAAEuI/XwhtogT_1tA/s1600/3+cute2.jpg",
+    photo:"public/img/lindsay.jpg",
     scores:[
-        '1',
-        '1',
-        '3',
-        '2',
         '4',
-        '3',
-        '3',
+        '4',
+        '1',
         '2',
-        '5',
+        '1',
+        '1',
+        '1',
+        '1',
+        '3',
         '2'
       ]
   }
