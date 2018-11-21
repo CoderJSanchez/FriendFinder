@@ -14,14 +14,15 @@ module.exports = function (app) {
         var bestMatchName = '';
         var bestMatchImage = '';
         var totalDifference = 10000;
-
+        //this first loop reads each friend in the array
         for (var i = 0; i < friends.length; i++) {
-
+            //this dif variable will the differance of each friends score
             var dif = 0;
+            //this second loop will loop through the scores of the user and friend and do the math
             for (var j = 0; j < userScores.length; j++) {
                 dif += Math.abs(friends[i].scores[j] - userScores[j])
             }
-
+                
             if (dif < totalDifference) {
                 totalDifference = dif;
                 bestMatchName = friends[i].name;
