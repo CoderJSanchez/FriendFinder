@@ -1,5 +1,7 @@
+//this 'connects' to the friends.js file to read the data
 const friends = require('../data/friends');
 
+//wrapping these routes in module.exports allows us to export it back to server.js
 module.exports = function (app) {
     app.get('/api/friends', function (req, res) {
         res.json(friends);
@@ -14,22 +16,16 @@ module.exports = function (app) {
         var totalDifference = 10000;
 
         for (var i = 0; i < friends.length; i++) {
-            //console.log('friend = ' + JSON.stringify((friends[i])));
-            //console.log(friends[i].scores);
+
             var dif = 0;
             for (var j = 0; j < userScores.length; j++) {
                 dif += Math.abs(friends[i].scores[j] - userScores[j])
             }
-            //console.log('diff =  ' + dif);
 
             if (dif < totalDifference) {
                 totalDifference = dif;
                 bestMatchName = friends[i].name;
                 bestMatchImage = friends[i].photo;
-                //console.log('Closest match found = ' + dif);
-                //console.log('Friend name = ' + friends[i].name);
-                //console.log('Friend image = ' + friends[i].photo);
-
                 console.log('bestMatchName: ' + bestMatchName);
                 
             }
